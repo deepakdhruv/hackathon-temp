@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Catalog 1",
+        "products": [
+            {
+                "name": "Red Tape Shoes Footwear",
+                "description": "Red Tape Sneaker Casual Shoes for Men's | Soft Cushion Insole, Slip-Resistance, Dynamic Feet Support, Arch Support & Perfect for Casual Wear",
+                "price": "₹1,159",
+                "images": ["product1-a.jpg", "product1-b.jpg", "product1-c.jpg"]
+            },
+            {
+                "name": "NIKE Mens Revolution 7Running Shoes Footwear ",
+                "description": "Upper Material-Syntheti Outersole material-Rubber",
+                
+                "price": "₹2,924",
+                "images": ["product2_1.jpg", "product2_2.jpg", "product2_3.jpg"]
+            },
+            {
+                "name": "adidas Mens Enry Flux M Running Shoes Footwear",
+                "description": "Midsole with energetic and highly responsive cushioning and bounce for an efficient ride. TPU patch brandig is also placed on the midsole with printed logo on TPU patch ",
+                "price": "₹3,119",
+                "images": ["product4_1.jpg", "product4_2.jpg", "product4_3.jpg"]
+            },
+            {
+                "name": "STONEBERG Shirt ",
+                "description": "Men Slim Fit Solid Spread Collar Formal Shirt",
+                "price": "₹379",
+                "images": ["product3_1.jpg", "product3_2.jpg", "product3_3.jpg"]
+            },
+            {
+                "name": "Surhi  Shirt ",
+                "description": "Men Regular Fit Checkered Spread Collar Casual Shirt",
+                "price": "₹299",
+                "images": ["product5_1.jpg", "product5_2.jpg", "product5_3.jpg"]
+            },
+            {
+                "name": "Calvin Klein Shirt ",
+                "description": "Men Relaxed Fit Fit Solid Spread Collar Casual Shirt",
+                "price": "₹5,519",
+                "images": ["product6_1.jpg", "product6_2.jpg", "product6_3.jpg"]
+            },
+            {
+                "name": "Motorola G34 5G (Ocean Green, 128 GB)  (8 GB RAM) mobile phone",
+                "description": "Look no further than the amazing Moto G34 5G smartphone, which is built to improve performance and add sophistication to your life. Powered by the LPDDR4X RAM and the Snapdragon 695.",
+                "price": "₹11,999",
+                "images": ["product7_1.jpg", "product7_2.jpg", "product7_3.jpg"]
+            },
+            {
+                "name": "Apple iPhone 14 Mobile phone",
+                "description": "A15 Bionic Chip, 6 Core Processor Processor",
+                "price": "₹58,999",
+                "images": ["product8_1.jpg", "product8_2.jpg", "product8_3.jpg"]
+            },
+            {
+                "name": "SAMSUNG Galaxy S24 Ultra 5G  Mobile phone",
+                "description": "Behold the Samsung Galaxy S24 Ultra smartphone, an exceptional amalgamation of incredible technology",
+                "price": "₹1,29,999",
+                "images": ["product9_1.jpg", "product9_2.jpg", "product9_3.jpg"]
+            }
+
+
+
+        ]
+    }
+
+]

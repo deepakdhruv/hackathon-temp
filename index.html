@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <h1>Product Catalog</h1>
+        <form id="search-form">
+            <div class="inpot">
+                <div class="inpo"><input type="text" id="searchInput" placeholder="Search by name..."></div>
+            <div class="inpo"><button class="voice" "button" id="voice-search-button">Voice Search</button></div>
+            <div class="inpo"><input type="text" id="imageUrl" placeholder="Enter Image URL">
+                <button onclick="analyzeImage()">Analyze Image</button>
+                <div id="result"></div></div>
+            </div>
+        </form>
+    </nav>
+
+    
+
+    <div id="catalogs"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

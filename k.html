@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <style>
+        /* Add your CSS styles here */
+        .catalog {
+            margin-bottom: 20px;
+        }
+        .product-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Catalog</h1>
+    <div id="catalogs"></div>
+    <hr>
+    <h2>Voice Search</h2>
+    <input type="text" id="searchInput" placeholder="Search by voice or text">
+    <button id="voice-search-button">Voice Search</button>
+
+    <script>
+        // Paste your JavaScript code here
+        function fetchCatalog() {
+            return fetch('catalog.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch catalog');
+                    }
+                    return response.json();
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+
+        function createProductCard(product) {
+            const productCard = document.createElement("div");
+            productCard.classList.add("product-card");
+            productCard.innerHTML = `
+                <h3>${product.name}</h3>
+                <div class="image-container">
+                    <img src="images/${product.images[0]}" alt="${product.name}">
+                </div>
+                <p>${product.description}</p>
+                <p>Price: ${product.price}</p>
+            `;
+            return productCard;
+        }
+
+        function displayCatalog() {
+            fetchCatalog().then(catalogs => {
+                if (catalogs) {
+                    const catalogContainer = document.getElementById("catalogs");
+                    catalogContainer.innerHTML = "";
+                    catalogs.forEach(catalog => {
+                        const catalogDiv = document.createElement("div");
+                        catalogDiv.classList.add("catalog");
+                        catalogDiv.innerHTML = `<h2>${catalog.name}</h2>`;
+                        catalog.products.forEach(product => {
+                            const productCard = createProductCard(product);
+                            catalogDiv.appendChild(productCard);
+                        });
+                        catalogContainer.appendChild(catalogDiv);
+                    });
+                }
+            });
+        }
+
+        function handleVoiceSearch() {
+            const recognition = new webkitSpeechRecognition() || speechRecognition();
+            recognition.lang = "en-US";
+            recognition.onresult = function(event) {
+                const voiceSearchResult = event.results[0][0].transcript;
+                document.getElementById("searchInput").value = voiceSearchResult;
+                handleSearch();
+            };
+            recognition.start();
+        }
+
+        function handleSearch() {
+            const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            const productCards = document.querySelectorAll(".product-card");
+            productCards.forEach(card => {
+                const productName = card.querySelector("h3").textContent.toLowerCase();
+                if (productName.includes(searchTerm)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        document.getElementById("voice-search-button").addEventListener("click", handleVoiceSearch);
+        document.getElementById("searchInput").addEventListener("input", handleSearch);
+
+        displayCatalog();
+    </script>
+</body>
+</html>
+
+
